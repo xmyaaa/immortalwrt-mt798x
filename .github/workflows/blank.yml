@@ -77,7 +77,7 @@ jobs:
         uses: stupidloud/cachewrtbuild@main
         with:
           ccache: 'true'
-          mixkey: 'mt7981'
+          mixkey: 'mt798x'
           prefix: ${{ github.workspace }}/openwrt
       - name: 加载自定义feeds文件
       run: |
