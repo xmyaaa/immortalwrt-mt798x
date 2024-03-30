@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Checkout
+    - name: 签出工作区
       uses: actions/checkout@main
 
       - name: Initialization environment
