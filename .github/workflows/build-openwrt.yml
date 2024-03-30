@@ -26,6 +26,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -35,7 +36,7 @@ jobs:
 
     steps:
       - name: 签出工作区
-      uses: actions/checkout@v4
+      uses: actions/checkout@main
 
       - name: 初始化编译环境
       env:
@@ -70,7 +71,7 @@ jobs:
         uses: stupidloud/cachewrtbuild@main
         with:
           ccache: 'true'
-          mixkey: 'mt7981'
+          mixkey: 'mt798x'
           prefix: ${{ github.workspace }}/openwrt
       - name: 加载自定义feeds文件
       run: |
