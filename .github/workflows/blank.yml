@@ -72,10 +72,11 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
     - name: 尝试获取缓存
-        uses: stupidloud/cachewrtbuild@main
+      uses: stupidloud/cachewrtbuild@main
         with:
-          ccache: 'true'
+        ccache: 'true'
           mixkey: 'mt7981'
           prefix: ${{ github.workspace }}/openwrt
     - name: Load custom feeds
