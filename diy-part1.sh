@@ -20,5 +20,5 @@ sed -i '1 i src-git-full passwall https://github.com/xiaorouji/openwrt-passwall-
 echo '=========Add passwall feeds source OK!========='
 
 # Add a feed source
-#rm -rf package/helloworld
-#git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+# rm -rf package/helloworld
+# git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
