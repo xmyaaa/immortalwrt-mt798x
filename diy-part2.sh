@@ -21,19 +21,14 @@ rm -rf passwall
 echo '=========Replace passwall source OK!========='
 
 echo '添加Passwall2软件'
-# rm -rf feeds/luci/applications/luci-app-passwall2
-mkdir feeds/luci/applications/luci-app-passwall2
-git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall2 passwall2
-mv passwall2/luci-app-passwall2/* feeds/luci/applications/luci-app-passwall2/
-rm -rf passwall2
 echo '=========Replace passwall source OK!========='
 
 echo '修改Passwall检测规则'
-# sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall/root/usr/share/passwall/app.sh
+
 echo '=========ALTER passwall denpendcies check OK!========='
 
 echo '链接luci-app-passwall2'
-# ln -sr feeds/luci/applications/luci-app-passwall2 package/feeds/luci/luci-app-passwall2
+
 echo '=========Link luci-app-passwall2!========='
 
 # echo '开启sing-box的CGO标记'
