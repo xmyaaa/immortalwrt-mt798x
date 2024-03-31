@@ -34,11 +34,11 @@ rm -rf passwall2
 echo '=========Replace passwall source OK!========='
 
 echo '修改Passwall检测规则'
-#sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall/root/usr/share/passwall/app.sh
+# sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall/root/usr/share/passwall/app.sh
 echo '=========ALTER passwall denpendcies check OK!========='
 
 # echo '链接luci-app-passwall2'
-#ln -sr feeds/luci/applications/luci-app-passwall2 package/feeds/luci/luci-app-passwall2
+# ln -sr feeds/luci/applications/luci-app-passwall2 package/feeds/luci/luci-app-passwall2
 echo '=========Link luci-app-passwall2!========='
 
 # echo '开启sing-box的CGO标记'
