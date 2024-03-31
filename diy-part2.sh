@@ -7,8 +7,7 @@
 #WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #See the License for the specific language governing permissions and
 #limitations under the License.
-
-
+#
 echo '替换jerrykuku的luci argon主题'
 #rm -rf feeds/luci/themes/luci-theme-argon
 #git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
@@ -20,10 +19,10 @@ git clone -b 22.x --single-branch https://github.com/sbwml/packages_lang_golang 
 echo '=========Replace golang OK!========='
 
 echo '替换Passwall软件'
-#rm -rf feeds/luci/applications/luci-app-passwall
-#git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall feeds/luci/applications/luci-app-passwall
-#mv feeds/luci/applications/luci-app-passwall/luci-app-passwall/* feeds/luci/applications/luci-app-passwall/
-#rm -rf feeds/luci/applications/luci-app-passwall/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall
+git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall feeds/luci/applications/luci-app-passwall
+mv feeds/luci/applications/luci-app-passwall/luci-app-passwall/* feeds/luci/applications/luci-app-passwall/
+rm -rf feeds/luci/applications/luci-app-passwall/luci-app-passwall
 echo '=========Replace passwall source OK!========='
 
 echo '修改Passwall检测规则'
@@ -33,6 +32,3 @@ echo '=========ALTER passwall denpendcies check OK!========='
 # echo '开启sing-box的CGO标记'
 # sed -i 's/CGO_ENABLED=0/CGO_ENABLED=1/g' feeds/passwall/sing-box/Makefile
 # echo '=========Enable sing-box CGO FLAG OK !========='
-
-
-
