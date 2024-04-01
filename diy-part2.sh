@@ -27,8 +27,11 @@ echo '修改Passwall检测规则'
 
 echo '=========ALTER passwall denpendcies check OK!========='
 
-echo '链接luci-app-passwall2'
-
+echo '修改默认IP'
+sed -i 's/ipad=${ipaddr:-"192.168.1.1"}/ipad=${ipaddr:-"192.168.7.1"}/g' package/base-files/files/bin/config_generate
+sed -i 's/addr_offset=2/addr_offset=8/g' package/base-files/files/bin/config_generate
+sed -i 's/${ipaddr:-"192.168.$((addr_offset++)).1"}/${ipaddr:-"192.168.$((addr_offset++)).1"}/g' package/base-files/files/bin/config_generate
+cat package/base-files/files/bin/config_generate |grep hostname=
 echo '=========Link luci-app-passwall2!========='
 
 # echo '开启sing-box的CGO标记'
