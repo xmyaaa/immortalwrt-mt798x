@@ -61,17 +61,17 @@ jobs:
     - name: 加载自定义feeds文件
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_PART1_SH
+        chmod +x $DIY_P1_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_PART1_SH
+        $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新feeds中描述内容
       run: 
        cd openwrt && ./scripts/feeds update -a
        cd ..
-       chmod +x $DIY_PART2_SH
+       chmod +x $DIY_P2_SH
        cd openwrt
-       $GITHUB_WORKSPACE/$DIY_PART2_SH
+       $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: 安装feeds中描述内容
       run: cd openwrt && ./scripts/feeds install -a
@@ -80,9 +80,9 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_PART3_SH
+        chmod +x $DIY_P3_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_PART3_SH
+        $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: Download package
       id: package
@@ -98,7 +98,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        make -j$(nproc) || make -j8 || make -j8 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
