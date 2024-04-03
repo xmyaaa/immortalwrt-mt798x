@@ -15,8 +15,8 @@
 #limitations under the License.
 
 echo '替换jerrykuku的luci argon主题'
-rm -rf feeds/luci/themes/luci-theme-argon
-git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
+# rm -rf feeds/luci/themes/luci-theme-argon
+# git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
 echo '=========Replace luci theme argon OK!========='
 
 echo '替换golang到1.22.x'
@@ -44,5 +44,5 @@ sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall/r
 echo '=========ALTER passwall denpendcies check OK!========='
 
 echo '修改Passwall2检测规则'
-sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/app.sh
+#sed -i 's/socket" "iptables-mod-//g' feeds/luci/applications/luci-app-passwall2/root/usr/share/passwall2/app.sh
 echo '=========ALTER passwall denpendcies check OK!========='
