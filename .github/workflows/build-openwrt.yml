@@ -84,7 +84,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P3_SH
 
-    - name: Download package
+    - name: 下载编译所需依赖文件
       id: package
       run: |
         cd openwrt
@@ -93,7 +93,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Compile the firmware
+    - name: 编译固件
       id: compile
       run: |
         cd openwrt
