@@ -81,8 +81,13 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新feeds中描述内容
-      run: cd openwrt && ./scripts/feeds update -a
-
+      run:  
+        cd openwrt && ./scripts/feeds update -a
+        cd ..
+        chmod +x $DIY_PART2_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_PART2_SH
+         
     - name: Install feeds 安装feeds中描述内容
       run: cd openwrt && ./scripts/feeds install -a
 
