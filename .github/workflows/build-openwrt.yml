@@ -80,13 +80,13 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds
+    - name: 更新feeds中描述内容
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Install feeds
+    - name: Install feeds 安装feeds中描述内容
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: Load custom configuration
+    - name: 加载自定义编译配置文件
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
